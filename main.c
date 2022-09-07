@@ -14,7 +14,7 @@ int main(__attribute__((unused)) int ac, char **av)
 	int loop = 1;
 
 	pid_t child;
-
+	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
 		printf("YJ$ ");
