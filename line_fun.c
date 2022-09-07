@@ -1,22 +1,4 @@
-#include "main.h"
 
-/**
- * get_line - read line from user input
- *
- * Return: line
- */
-char *get_line(void)
-{
-	char *line;
-	size_t buff = 0;
-
-	if (getline(&line, &buff, stdin) == -1)
-	{
-		if (feof(stdin))
-		{
-			free(line);
-			exit(EXIT_SUCCESS);
-		}
 		else
 		{
 			free(line);
