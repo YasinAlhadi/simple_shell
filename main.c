@@ -17,7 +17,8 @@ int main(__attribute__((unused)) int ac, char **av)
 	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
-		printf("YJ$ ");
+		if (isatty(STDIN_FILENO) == 1)
+			printf("YJ$ ");
 		line = get_line();
 		child = fork();
 		if (_execute(child, line, token) == -1)
